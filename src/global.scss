@@ -1,0 +1,25 @@
+$mainColor: #15023a;
+
+$breakpoiints:(
+    "sm":380px,
+    "md":560px,
+    "lg":780px
+);
+
+@mixin sm {
+    @media (min-width:0) and (max-width:map-get($breakpoiints,"sm")) {
+        @content;
+    }
+};
+
+@mixin md {
+    @media (min-width:map-get($breakpoiints, "sm")) and (max-width:map-get($breakpoiints,"lg")) {
+        @content;
+    }
+};
+
+@mixin lg {
+    @media (min-width:map-get($breakpoiints, "lg")) {
+        @content;
+    }
+};
